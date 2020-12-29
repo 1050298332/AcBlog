@@ -60,7 +60,7 @@
                    @select="handleSelect"
                    active-text-color="#000000">
             <el-menu-item index="1">管理主页</el-menu-item>
-            <el-menu-item index="2" @click="gobksy()">博客主页</el-menu-item>
+            <el-menu-item index="2" @click="gobksy">博客主页</el-menu-item>
             <div class="app-header-userinfo">
               <el-dropdown trigger="hover"
                            :hide-on-click="false" style="float: right">

@@ -23,6 +23,11 @@ const routes = [
     path:'/bksy',
     name:'bksy',
     component:()=>import("@/components/bksy.vue")
+  },
+  {
+    path:'/add_blog',
+    name:'add_blog',
+    component:()=>import("@/components/add_blog.vue")
   }
 ]
 
