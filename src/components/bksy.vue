@@ -29,7 +29,12 @@
             <div class="site-logo" >
               <img src="@/assets/Aclles.jpg">
               <p class="site-name">Aclles</p>
+              <!-- 简介 -->
+              <div class="header-info">
+                  <p class="Acinfo" style="width: 31.625rem">Nobody can be youerself,but you can get all by yourself</p>
+              </div>
             </div>
+
         </div>
       </div>
         <h1>推荐</h1>
@@ -85,6 +90,20 @@
 </script>
 
 <style scoped lang="less">
+  .header-info p{
+    margin-left:-303px;
+  }
+ .header-info {
+     width: 60%;
+     font-size: 14px;
+     color: #EAEADF;
+     background: rgba(0, 0, 0, 0.66);
+     padding: 10px 290px;
+     margin: 30px auto 0 auto;
+     font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+     letter-spacing: 1px;
+     line-height: 30px;
+ }
  a{text-decoration:none;
      color: #8fd0cc;
      }
@@ -104,8 +123,8 @@
       }
   #div-image{
   	width:100%;
-  	height: 500px;
-    border: 1px solid #000;
+  	height: 900px;
+    border: 5px solid #99c9ec47;
     #image{
       background: url('http://www.mccsdl.top/images/1.jpg') center no-repeat;
       width: 100%;
@@ -325,6 +344,9 @@
     /*******/
     /* 屏幕小于1440px */
     @media (max-width: 1500px)  {
+      .header-info{
+       display:none;
+      }
       .post-entry .feature{
         left: 3%;
       }
