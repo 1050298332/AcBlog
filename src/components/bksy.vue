@@ -7,9 +7,7 @@
           Menus
         </div>
         <div class="site-menus">
-          <div class="menu-item header-search">
-            <header-search />
-          </div>
+
           <div class="menu-item">
             <router-link to="/bksy">首页</router-link>
           </div>
@@ -71,38 +69,18 @@
     </el-main>
     <el-footer>
       <section class="p-10">
-          <h1> {{ screenWidth }} × {{ screenHeight }} </h1>
         </section>
-        底部
+          <Acfooter></Acfooter>
     </el-footer>
-
   </el-container>
 </template>
 
 <script>
+    import Acfooter from '@/components/Acfooter'
     export default {
-          data() {
-            return {
-              screenWidth: '',
-              screenHeight: ''
-            };
-          },
-          mounted() {
-            this.screenWidth = document.body.clientWidth;
-            this.screenHeight = document.body.clientHeight;
-            window.onresize = () => {
-              return (() => {
-                this.screenWidth = document.body.clientWidth;
-                this.screenHeight = document.body.clientHeight;
-              })();
-            };
-          },
-        name: "post",
-        props: {
-            post: {
-                type: Object
-            }
-        }
+      components:{
+          Acfooter
+      }
     }
 </script>
 
@@ -253,9 +231,8 @@
             text-overflow: ellipsis;
             width: 70%;
             color: #737373;
-
             & a:hover {
-                color: #8fd0cc;
+                color: #c399ca;
             }
         }
 

@@ -22,7 +22,7 @@
               <el-menu-item-group>
                 <el-submenu index="2">
                 <span slot="title">常规操作</span>
-                <el-menu-item index="1-1">新增博客</el-menu-item>
+                <el-menu-item index="1-1" @click="add_blog">新增博客</el-menu-item>
                 <el-menu-item index="1-2">评论(吐槽)编辑</el-menu-item>
                 </el-submenu>
               </el-menu-item-group>
@@ -59,7 +59,7 @@
                    mode="horizontal"
                    @select="handleSelect"
                    active-text-color="#000000">
-            <el-menu-item index="1">管理主页</el-menu-item>
+            <el-menu-item index="1" @click="gohome">管理主页</el-menu-item>
             <el-menu-item index="2" @click="gobksy">博客主页</el-menu-item>
             <div class="app-header-userinfo">
               <el-dropdown trigger="hover"
@@ -103,6 +103,12 @@
       methods: {
         gobksy() {
             this.$router.push('/bksy');
+        },
+        gohome(){
+            this.$router.push('/Home');
+        },
+        add_blog(){
+            this.$router.push('/add_blog');
         },
         toggleSideBar() {
           this.isCollapse = !this.isCollapse
