@@ -34,7 +34,7 @@
                   <p class="Acinfo" style="width: 31.625rem">Nobody can be youerself,but you can get all by yourself</p>
               </div>
             </div>
-
+            <div data-v-1925270a="" class="slant-left"></div>
         </div>
       </div>
         <h1>推荐</h1>
@@ -90,6 +90,16 @@
 </script>
 
 <style scoped lang="less">
+  .site-logo[data-v-1925270a] {
+     content: "";
+     position: absolute;
+     width: 0;
+     height: 0;
+     border-bottom: 100px solid #fff;
+     border-right: 800px solid transparent;
+     left: 0;
+     bottom: 0;
+ }
   .header-info p{
     margin-left:-303px;
   }
