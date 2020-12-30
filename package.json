@@ -30,6 +30,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
+    "less.js": "^3.0.5",
+    "postcss-pxtorem": "^5.1.1",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-quill-editor": "^3.0.6",
     "vue-resource": "^1.5.1",

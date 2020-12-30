@@ -65,7 +65,7 @@
               })
                         // //保存token到客户端 sessionStorage中
                window.sessionStorage.setItem("token", res.data.message);
-               
+
                // //跳转到主页
                this.$router.push('/home');
             }else {
@@ -73,7 +73,7 @@
                 type: "warning",
                 message: res.data.message
               })
-              
+
             }
           })
         });
@@ -85,27 +85,27 @@
 <style lang="less" scoped>
   .login_container {
     height: 100%;
-    background: url('~@/assets/bjt1.png') center center no-repeat;
+    background: url('http://mccsdl.top/images/1.jpg') center center no-repeat;
     background-size: cover;
   }
 
   .login_box {
     width: 450px;
     height: 380px;
-    background-color: #aea4a2bd;
+    background-color: #e0fffea8;
     border-radius: 15px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 10px solid #000;
+    border: 6px solid #b8d0cf;
 
     .avatar_box {
-      height: 130px;
-      width: 130px;
+      height: 132px;
+      width: 132px;
       border: 1px solid #c2c2c2;
       border-radius: 50%;
-      padding: 10px;
+      padding: 6px;
       box-shadow: 0 0 10px #c3c3c3;
       position: absolute;
       left: 50%;
