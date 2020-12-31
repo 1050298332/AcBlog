@@ -7,18 +7,9 @@
     <img src="https://gitee.com/zhao_yunmeng/GRBK_VUE/badge/star.svg?theme=white" alt="star"/>
     <img src="https://gitee.com/zhao_yunmeng/GRBK_VUE/badge/fork.svg" alt="fork"/>
   </a>
-  <a href="https://github.com/fengziye/Gblog">
+  <a href="https://github.com/1050298332/AcBlog">
       <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg?style=social" alt="Github star"/>
       <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg?style=social" alt="Github forks"/>
-  </a>
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
-  </a>
-  <a href="https://github.com/fengziye/Gblog/blob/master/license">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
-  </a>
-  <a href="https://github.com/fengziye/Gblog/releases">
-      <img src="https://img.shields.io/github/release/fengziye/Gblog.svg" alt="GitHub release">
   </a>
 </p>
 ## Project setup
