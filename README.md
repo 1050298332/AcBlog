@@ -8,8 +8,8 @@
     <img src="https://gitee.com/zhao_yunmeng/GRBK_VUE/badge/fork.svg" alt="fork"/>
   </a>
   <a href="https://github.com/1050298332/AcBlog">
-      <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg?style=social" alt="Github star"/>
-      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg?style=social" alt="Github forks"/>
+      <img src="https://img.shields.io/badge/GitHub-%E7%B2%BE%E5%93%81%E5%8D%9A%E5%AE%A2-%23FF0000"/>
+      <img src="https://img.shields.io/badge/GitHub-%E4%BC%98%E7%A7%80%E7%A8%8B%E5%BA%8F%E5%91%98-%23FF0000"/>
   </a>
 </p>
 ## Project setup
