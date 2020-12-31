@@ -26,15 +26,27 @@
     <el-main >
       <div id="div-image">
         <div id="image" >
-            <div class="site-logo" >
+            <el-form class="site-logo" ref="UserInfo" :model="UserInfo">
+              <!-- 头像 -->
               <img src="@/assets/Aclles.jpg">
-              <p class="site-name">Aclles</p>
+              <!-- 名字 -->
+              <el-form-item prop="username">
+                <p class="site-name">{{UserInfo.username}}</p>
+         <div  class="top-social">
+           <div  title="QQ">
+             <a  href="https://qm.qq.com/cgi-bin/qm/qr?k=nPntLmgkOXPg96OW-AvZJdafigtzlW6H&jump_from=webapi" target="_blank" style="color: rgb(26, 182, 255);"><i  class="iconfont iconqq"></i></a></div>
+           <div  title="Gitee">
+             <a  :href="UserInfo.gitee" target="_blank" style="color: rgb(216, 30, 6);"><i  class="iconfont icongitee"></i></a></div>
+           <div  title="GitHub">
+             <a  :href="UserInfo.github" target="_blank"><i  class="iconfont icongithub"></i></a></div>
+           <div  title="CSDN">
+             <a  :href="UserInfo.wx" target="_blank" style="color: red;"><i  class="iconfont iconcsdn"></i></a></div></div>
+              </el-form-item>
               <!-- 简介 -->
-              <div class="header-info">
-                  <p class="Acinfo" style="width: 31.625rem">Nobody can be youerself,but you can get all by yourself</p>
-              </div>
-            </div>
-            <div data-v-1925270a="" class="slant-left"></div>
+              <el-form-item class="header-info" prop="Info">
+                  <p class="Acinfo" style="width: 31.625rem">{{UserInfo.info}}</p>
+              </el-form-item>
+            </el-form>
         </div>
       </div>
         <h1>推荐</h1>
@@ -76,30 +88,108 @@
       <section class="p-10">
         </section>
           <Acfooter></Acfooter>
+          <div class="back-top" v-show="show" @click.stop="getTop">
+            <img src="../assets/img/top.png" alt="" class="img1">
+            <img src="../assets/img/top1.png" alt="" class="img2">
+            <p style="color: #000000;">夸老子</p>
+          </div>
     </el-footer>
   </el-container>
 </template>
 
 <script>
-    import Acfooter from '@/components/Acfooter'
+  import {
+    getUserInfo
+  } from "@/api/user.js"
+  import Acfooter from '@/components/Acfooter'
     export default {
+      created() {
+        this.userInfo()
+      },
+      data() {
+        return {
+          //回到顶部
+          show: false,
+          //这是博主信息
+          UserInfo: {
+            gitee: "加载中..",
+            github: "加载中..",
+            id: '加载中..',
+            info: "加载中..",
+            qq: "加载中..",
+            username: "加载中..",
+            wx: "加载中.."
+          }
+          }},
       components:{
           Acfooter
+      },
+      methods: {
+        //获取博主信息
+        userInfo() {
+         getUserInfo().then(res=>{
+            if(res.status !== 200) return this.$message.error(res.data.message)
+            this.UserInfo = res.data
+         }).catch(err=>{
+           console.log('博主信息访问失败')
+         })
+        },
+        //回到顶部 ↓
+        scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            if (scrollTop > 150) {
+                this.show = true
+            } else {
+                this.show = false
+            }
+        },
+        getTop() {
+            let timer = setInterval(() => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                let speed = Math.ceil(scrollTop / 5)
+                document.documentElement.scrollTop = scrollTop - speed
+                if (scrollTop === 0) {
+                    clearInterval(timer)
+                }
+            }, 20)
+        }
+      },
+      mounted () {
+          window.addEventListener('scroll', this.scroll)
+      },
+      beforeDestroy () {
+          window.removeEventListener('scroll', this.scroll)
       }
+       //回到顶部 ↑
     }
 </script>
 
 <style scoped lang="less">
-  .site-logo[data-v-1925270a] {
-     content: "";
-     position: absolute;
-     width: 0;
-     height: 0;
-     border-bottom: 100px solid #fff;
-     border-right: 800px solid transparent;
-     left: 0;
-     bottom: 0;
- }
+  .back-top {
+      background-color: #fff;
+      position: fixed;
+      right: 9rem;
+      bottom: 9rem;
+      border-radius: 25px;
+      cursor: pointer;
+      opacity: .3;
+      transition: .3s;
+      text-align: center;
+      z-index: 99;
+      img{
+          width: 60px;
+          height: 60px;
+      }
+      .img2{
+          display: none;
+      }
+      &:hover img.img1{
+          display: none;
+      }
+      &:hover img.img2{
+          display: unset;
+      }
+  }
   .header-info p{
     margin-left:-303px;
   }
@@ -395,7 +485,28 @@
             margin-top: 20px;
         }
     }
-
+    @media (max-width: 600px){
+        .back-top{
+            display: none;
+        }
+    }
     /******/
-
+        .top-social {
+            height: 32px;
+            margin-top: 30px;
+            margin-left: 10px;
+            list-style: none;
+            display: inline-block;
+            font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+            div {
+                float: left;
+                margin-right: 10px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                width: 32px;
+                background: white;
+                border-radius: 100%;
+            }
+        }
 </style>

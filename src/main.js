@@ -3,7 +3,8 @@ import App from './App.vue'
 import VueResource from 'vue-resource'
 import router from './router'
 import VueQuillEditor from 'vue-quill-editor'
-import "./utils/rem.js";
+
+import './assets/font/iconfont.css'
 
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme

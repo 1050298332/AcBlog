@@ -35,7 +35,7 @@
         //这是登录表单
         loginForm: {
           username: 'admin',
-          password: '123456',
+          password: '123456'
         },
         //这是表单的验证
         loginFromRules: {

@@ -11,6 +11,6 @@ export const login = (data)=>{
 export const getUserInfo = ()=>{
   return request({
     method:'get',
-    url:'/user/doLogin'
+    url:'/user/doInfo'
   })
 }

@@ -1,6 +1,6 @@
 # Aclles的个人博客
 <p align="center">
-  <img width="80" src="http://www.mccsdl.top/images/logo.png"/>
+  <img width="80" src="https://imgchr.com/i/rLTE8g"/>
 </p>
 
 ## Project setup
